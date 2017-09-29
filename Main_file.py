@@ -1,11 +1,12 @@
 #fetch data from a web server using open API. Specific dta to fetch.
 #pip install --user requests  (to install locally, without admin)
-import os
+
+import os #clicked on os when it was red, it imports for you!!
 
 import requests #ignore red squiggle
-from urllib.parse import quote
+from urllib.parse import quote #handles the q= in the API string
 import json
-key = os.environ.get("key")
+key = os.environ.get("key") # I put the value into the evironment variable and named it key
 
 def get_temp(city, country):
     resp = requests.get('http://api.openweathermap.org/data/2.5/weather?q=%s,%s&APPID=%s' \
@@ -23,5 +24,7 @@ def main():
         print('The temperature in %s %s is %f degrees C ' % (city, country, temp))
     else :
         print('Unable to get the temperature.')
+
+#need to do error handling, cache locally, etc
 
 main()
