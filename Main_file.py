@@ -21,6 +21,8 @@ def get_temp(city, country):
     else:
         return None
 
+    #googlin' = python requests DNS fail. exception handling.
+
 def main():
 
     city = input("Enter the city to search for: ")
