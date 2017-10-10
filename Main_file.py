@@ -26,6 +26,9 @@ def main():
     temp = get_temp(city, country)
     if temp is not None:
         print('The temperature in %s %s is %f degrees K ' % (city, country, temp))
+        clesius = convert_temp(temp)
+        # print('The temperature in %s %s is %f degrees celsius' % (city, country, temp))
+        print("Celsius is ", clesius )
     else :
         print('Unable to get the temperature.')
 
@@ -33,5 +36,9 @@ def main():
 def is_valid(city, country):
     if city == "":
         print("enter the city or country dammit ")
+
+def convert_temp(temp): #T(°C) = T(K) - 273.15
+    celsius_temp = temp - 273.15
+    return celsius_temp
 
 main()
